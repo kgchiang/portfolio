@@ -34,8 +34,6 @@ app.get('/:pageName', function(req, res) {
   var pageName = req.params.pageName;
   if (pageName === "about") {
     res.sendFile(path.join(__dirname, 'static', 'about.html'));
-  } else {
-    res.sendFile(path.join(__dirname, 'static', 'resume.pdf'));
   }
 });
 
@@ -45,7 +43,7 @@ app.get('/:pageName', function(req, res) {
 app.get('/projects/:title', function(req, res) {
   var title = req.params.title;
   //res.send(path.join(__dirname,  '/static/' + name + '.html'));
-  res.sendFile(path.join(__dirname, 'static' + title + '.html'));
+  res.sendFile(path.join(__dirname, 'static', title + '.html'));
 });
 
 var port = process.env.PORT || 3000;
